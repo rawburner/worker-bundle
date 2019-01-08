@@ -1,0 +1,26 @@
+{
+    "name": "rawburner/worker-bundle",
+    "description": "Simple worker which can takes some worker classes and executes them in cronjobs or cli",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Keil",
+            "email": "alexander.keil@leik-software.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2",
+        "symfony/form": "~2.7|~3.0|^4.0",
+        "symfony/framework-bundle": "^4.0"
+    },
+	"autoload": {
+        "psr-4": {
+            "WorkerBundle\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    }
+}
