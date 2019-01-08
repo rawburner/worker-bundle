@@ -1,0 +1,6 @@
+services:
+  worker_bundle.command.worker:
+    class: WorkerBundle\Command\WorkerCommand
+    public: true
+    tags:
+      - { name: console.command }
