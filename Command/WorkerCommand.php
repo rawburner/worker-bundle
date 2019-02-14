@@ -44,6 +44,8 @@ class WorkerCommand extends Command
     {
         /** @var WorkerInterface $worker */
         foreach ($this->workers as $worker) {
+            $worker->setInput($input);
+            $worker->setOutput($output);
             if (!$worker->canRun($input->getOptions())) {
                 $output->writeln(sprintf('Worker "%s" cannot run', \get_class($worker)));
                 continue;
