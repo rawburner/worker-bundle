@@ -2,16 +2,39 @@
 
 namespace WorkerBundle\Worker;
 
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
 /**
  * @author Alexander Keil (alexanderkeil@leik-software.com)
  */
 abstract class BaseWorker implements WorkerInterface
 {
     protected $messages=[];
+    
+    /**
+     * @var OutputInterface
+     */
+    protected $output;
+
+    /**
+     * @var InputInterface
+     */
+    protected $input;
 
     public function getMessages(): array
     {
         return $this->messages;
+    }
+
+    public function setOutput(OutputInterface $output): void
+    {
+        $this->output = $output;
+    }
+
+    public function setInput(InputInterface $input): void
+    {
+        $this->input = $input;
     }
 
     public function canRun(array $options=[]): bool
