@@ -7,7 +7,6 @@ use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use WorkerBundle\Command\WorkerCommand;
 use WorkerBundle\DependencyInjection\Compiler\WorkerCompilerPass;
-use WorkerBundle\Worker\WorkerInterface;
 
 /**
  * @author Alexander Keil (alexanderkeil@leik-software.com)

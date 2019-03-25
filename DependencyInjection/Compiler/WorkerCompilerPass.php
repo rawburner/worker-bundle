@@ -5,6 +5,7 @@ namespace WorkerBundle\DependencyInjection\Compiler;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
+use WorkerBundle\Worker\WorkerInterface;
 
 
 /**
@@ -19,6 +20,7 @@ class WorkerCompilerPass implements CompilerPassInterface
         if(!$container->has('worker_bundle.command.worker')){
             return;
         }
+
         $definition = $container->findDefinition('worker_bundle.command.worker');
         $taggedWorkers = $container->findTaggedServiceIds('rawburner.worker_bundle.worker');
         foreach ($taggedWorkers as $id => $worker){
