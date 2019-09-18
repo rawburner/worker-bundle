@@ -48,7 +48,7 @@ class WorkerCommand extends Command
         if(!$this->lock()){
             $output->writeln('The command is already running in another process.');
 
-            return 0;
+            return;
         }
         /** @var WorkerInterface $worker */
         foreach ($this->workers as $worker) {
